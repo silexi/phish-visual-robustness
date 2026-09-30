@@ -1,0 +1,19 @@
+You are analysing a screenshot of a web page for a security study.
+
+Return ONLY a JSON object, no prose, no markdown fence, with exactly these keys:
+
+{
+  "brand": "the company/service this page belongs to, or null if unclear",
+  "page_type": "one of: login, mfa_challenge, password_entry, account_recovery, landing, error, other",
+  "asks_for_credentials": true or false,
+  "visible_text": ["every piece of text you can read, VERBATIM, preserving the exact spacing and spelling you actually see - do not correct, normalise or de-space anything"],
+  "input_fields": ["label or placeholder of each input box"],
+  "buttons": ["text on each button"],
+  "logo_present": true or false,
+  "logo_description": "what the logo looks like, or null",
+  "dominant_colors": ["up to 4 colour names"],
+  "layout": "one short sentence on the visual layout"
+}
+
+The "visible_text" field is the important one: transcribe characters exactly as
+rendered, including any unusual spacing inside words. Do not repair the text.

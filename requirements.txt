@@ -1,0 +1,20 @@
+# Direct dependencies, pinned to the versions used for the reported runs.
+# See requirements-freeze.txt for the complete environment.
+numpy==2.5.3
+opencv-python==5.0.0.93
+scikit-image==0.26.0
+scipy==1.18.1
+pillow==12.3.0
+PyWavelets==1.10.0
+imageio==2.37.4
+playwright==1.63.0
+pandas==3.0.6
+pyarrow==25.0.1
+open_clip_torch==3.3.0
+torch==2.14.0
+torchvision==0.29.0
+matplotlib==3.11.2
+huggingface_hub==1.32.0
+# semantic rung (Apple Silicon only):
+mlx==0.32.2
+mlx-vlm==0.7.2

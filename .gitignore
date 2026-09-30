@@ -1,0 +1,17 @@
+# never committed: raw corpus, renders, features, models, local env
+shard*.parquet
+corpus/
+clean_f/
+clean_sub/
+pert/*/
+benign/html/
+benign_replay/shots/
+benign_ref/
+benign_cal/
+feat_*.npz
+*.npz
+*.log
+venv/
+__pycache__/
+.resized_*.png
+sheet*.png

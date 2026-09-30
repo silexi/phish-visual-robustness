@@ -1,0 +1,84 @@
+{
+ "definition": "perturbed answer parses and names a brand != clean brand (any brand counts on clean-unnamed pages); denominator = clean-parsed pages present in the condition file",
+ "n_clean_rows": 200,
+ "n_clean_parsed": 196,
+ "conditions": {
+  "A0n": {
+   "n_rows": 200,
+   "denominator": 196,
+   "n_named": 148,
+   "n_unnamed": 48,
+   "misattributed": 1,
+   "misattributed_on_named": 1,
+   "invented_on_unnamed": 0,
+   "rate": 0.0051,
+   "conditional_rate_on_named": 0.0068
+  },
+  "A1": {
+   "n_rows": 199,
+   "denominator": 195,
+   "n_named": 147,
+   "n_unnamed": 48,
+   "misattributed": 7,
+   "misattributed_on_named": 7,
+   "invented_on_unnamed": 0,
+   "rate": 0.0359,
+   "conditional_rate_on_named": 0.0476
+  },
+  "A3": {
+   "n_rows": 200,
+   "denominator": 196,
+   "n_named": 148,
+   "n_unnamed": 48,
+   "misattributed": 13,
+   "misattributed_on_named": 1,
+   "invented_on_unnamed": 12,
+   "rate": 0.0663,
+   "conditional_rate_on_named": 0.0068
+  },
+  "A4": {
+   "n_rows": 200,
+   "denominator": 196,
+   "n_named": 148,
+   "n_unnamed": 48,
+   "misattributed": 13,
+   "misattributed_on_named": 13,
+   "invented_on_unnamed": 0,
+   "rate": 0.0663,
+   "conditional_rate_on_named": 0.0878
+  },
+  "S1": {
+   "n_rows": 200,
+   "denominator": 196,
+   "n_named": 148,
+   "n_unnamed": 48,
+   "misattributed": 11,
+   "misattributed_on_named": 11,
+   "invented_on_unnamed": 0,
+   "rate": 0.0561,
+   "conditional_rate_on_named": 0.0743
+  },
+  "S3": {
+   "n_rows": 199,
+   "denominator": 195,
+   "n_named": 147,
+   "n_unnamed": 48,
+   "misattributed": 8,
+   "misattributed_on_named": 8,
+   "invented_on_unnamed": 0,
+   "rate": 0.041,
+   "conditional_rate_on_named": 0.0544
+  },
+  "S7": {
+   "n_rows": 200,
+   "denominator": 196,
+   "n_named": 148,
+   "n_unnamed": 48,
+   "misattributed": 61,
+   "misattributed_on_named": 20,
+   "invented_on_unnamed": 41,
+   "rate": 0.3112,
+   "conditional_rate_on_named": 0.1351
+  }
+ }
+}

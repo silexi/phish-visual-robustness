@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code or the derived data, please cite the paper below.
+  Until the article is published, cite this repository release.
+type: software
+title: >-
+  Robustness of Visual Representations for Phishing Webpages: code and
+  derived data
+version: 1.0.0
+date-released: "2026-10-01"
+license: MIT
+repository-code: https://github.com/silexi/phish-visual-robustness
+authors:
+  - family-names: Kılıç
+    given-names: Bartu
+    affiliation: >-
+      Işık University, Cybersecurity M.Sc. Programme, İstanbul, Türkiye
+  - family-names: Çeliktaş
+    given-names: Barış
+    affiliation: Işık University, İstanbul, Türkiye
+keywords:
+  - phishing
+  - visual similarity
+  - robustness
+  - perceptual hashing
+  - CLIP
+  - vision-language models
+  - measurement study
+preferred-citation:
+  type: article
+  title: >-
+    Robustness of Visual Representations for Phishing Webpages: A Measurement
+    Study from Classical Similarity Metrics to Vision-Language Models
+  authors:
+    - family-names: Kılıç
+      given-names: Bartu
+    - family-names: Çeliktaş
+      given-names: Barış
+  journal: Journal of Network and Computer Applications
+  year: 2026
+  notes: submitted
+references:
+  - type: conference-paper
+    title: Phishing attack detection using multi-scale visual similarity analysis
+    authors:
+      - family-names: Kılıç
+        given-names: Bartu
+      - family-names: Çeliktaş
+        given-names: Barış
+    collection-title: >-
+      Proceedings of the 33rd Signal Processing and Communications Applications
+      Conference (SIU)
+    year: 2025
+    pages: "1-4"
+    doi: 10.1109/SIU66497.2025.11112427

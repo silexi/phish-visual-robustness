@@ -1,0 +1,54 @@
+{
+ "A0n_all": {
+  "n": 833,
+  "n_applied": 30
+ },
+ "A1_filt": {
+  "n": 833,
+  "n_applied": 833
+ },
+ "A1_all": {
+  "n": 833,
+  "n_applied": 833
+ },
+ "A3_filt": {
+  "n": 698,
+  "n_applied": 698
+ },
+ "A3_all": {
+  "n": 833,
+  "n_applied": 698
+ },
+ "A4_filt": {
+  "n": 833,
+  "n_applied": 833
+ },
+ "A4_all": {
+  "n": 833,
+  "n_applied": 833
+ },
+ "S1_filt": {
+  "n": 714,
+  "n_applied": 714
+ },
+ "S1_all": {
+  "n": 833,
+  "n_applied": 714
+ },
+ "S3_filt": {
+  "n": 826,
+  "n_applied": 826
+ },
+ "S3_all": {
+  "n": 833,
+  "n_applied": 826
+ },
+ "S7_filt": {
+  "n": 833,
+  "n_applied": 833
+ },
+ "S7_all": {
+  "n": 833,
+  "n_applied": 833
+ }
+}
