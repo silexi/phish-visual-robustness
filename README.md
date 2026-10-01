@@ -145,5 +145,6 @@ the paper.
 ## Citation
 
 See `CITATION.cff`. Until the article is published, cite the repository
-release (a Zenodo DOI for the tagged version is given in the paper's data
-availability statement).
+release. The v1.0.0 tag is archived on Zenodo under
+https://doi.org/10.5281/zenodo.23080956 (concept DOI, always the latest version:
+https://doi.org/10.5281/zenodo.23080955).
