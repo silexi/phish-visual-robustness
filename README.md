@@ -31,7 +31,7 @@ Included:
 | `vlm/PROMPT.txt` | the exact prompt given to Qwen3-VL (also embedded in `describe.py`) |
 | `vlm/desc_*.jsonl` | raw model outputs, one JSON record per render, for the clean baseline (`A0`), every perturbation and the legitimate pages (`BENIGN`); e-mail addresses and URLs that the model transcribed from phishing pages are replaced by `[email redacted]` / `[url redacted]`, nothing else is altered |
 | `results_*.json` | every result table in the paper (`EXPERIMENT_SETTINGS.md` maps tables and figures to files and lists every parameter) |
-| `ids_*.txt`, `clusters_*.json` | the page ids that survive each gate and the kit-cluster assignment; ids are 16-hex-digit hashes of the archived HTML, they do not encode the source URL |
+| `ids_*.txt`, `clusters_*.json` | the page ids that survive each gate and the kit-cluster assignment; ids are the first 16 hex digits of the SHA-256 of the dataset's `id` column (`safe` in `render.py`); they are one-way and do not encode the source URL or domain |
 | `pert/manifest_*.jsonl`, `fidelity_f.jsonl` | per-page efficacy of each perturbation (`applied`) and the render-fidelity covariates |
 | `benign_urls*.txt`, `benign/fetch_manifest.jsonl`, `benign_replay/manifest_replay.jsonl`, `benign_*_manifest.json` | the legitimate login pages: the URL list, the capture log, the replay log and the brand-disjoint reference / calibration split |
 | `audit*.py`, `verify_*.py` | the audit scripts written while checking the numbers; they re-derive the tables from the raw files and are kept so a reader can repeat the checks |
@@ -43,8 +43,8 @@ Deliberately **not** included:
 * **Phishing renders, phishing HTML and the parquet shards** (except the one
   figure page named above). The corpus is the
   public Hugging Face dataset `nyuuzyou/phishing-snapshots`; every page used
-  here is identified by its `safe` id, which is derived from the archived HTML
-  and can be recomputed by `render.py` from the shards. Redistributing the
+  here is identified by its `safe` id, which is the SHA-256 prefix of the
+  dataset's record `id` and can be recomputed by `render.py` from the shards. Redistributing the
   renders or the HTML would redistribute live credential-harvesting kits,
   including any victim data pre-filled in them.
 * **Phishing URLs and domains.** The per-shard render manifests
