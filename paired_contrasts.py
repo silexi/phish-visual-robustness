@@ -85,9 +85,9 @@ def main():
                 pick = rng.integers(0, len(keys), len(keys))
                 draws.append(d[np.concatenate([idx[i] for i in pick])].mean())
             entry[f"{x}_minus_{y}_page_weighted"] = {
-                "page_mean_diff": round(float(d.mean()), 4),
-                "boot95": [round(float(np.percentile(draws, 2.5)), 4),
-                           round(float(np.percentile(draws, 97.5)), 4)]}
+                "page_mean_diff": round(float(d.mean()), 6),
+                "boot95": [round(float(np.percentile(draws, 2.5)), 6),
+                           round(float(np.percentile(draws, 97.5)), 6)]}
         res["conditions"][name] = entry
         print(name, json.dumps(entry), file=sys.stderr)
     Path(a.out).write_text(json.dumps(res, indent=1))

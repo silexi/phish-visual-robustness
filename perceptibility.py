@@ -30,10 +30,10 @@ def measure(clean_png, att_png):
              sigma=1.5, use_sample_covariance=False)
     dE = deltaE_ciede2000(rgb2lab(a / 255.0), rgb2lab(b / 255.0))
     return {"geometry_changed": False,
-            "ssim": round(float(s), 4),
-            "dE_mean": round(float(dE.mean()), 3),
-            "dE_p99": round(float(np.percentile(dE, 99)), 3),
-            "f_JND": round(float((dE > 1.0).mean()), 4)}
+            "ssim": round(float(s), 6),
+            "dE_mean": round(float(dE.mean()), 6),
+            "dE_p99": round(float(np.percentile(dE, 99)), 6),
+            "f_JND": round(float((dE > 1.0).mean()), 6)}
 
 
 def main():
@@ -73,9 +73,9 @@ def main():
         agg = {"n": len(good)}
         for k in ("ssim", "dE_mean", "dE_p99", "f_JND"):
             v = np.array([r[k] for r in good])
-            agg[k] = {"mean": round(float(v.mean()), 4),
-                      "median": round(float(np.median(v)), 4),
-                      "p95": round(float(np.percentile(v, 95)), 4)}
+            agg[k] = {"mean": round(float(v.mean()), 6),
+                      "median": round(float(np.median(v)), 6),
+                      "p95": round(float(np.percentile(v, 95)), 6)}
         out[c] = agg
         print(f"{c:<5} n={agg['n']:<4} SSIM={agg['ssim']['median']:.4f}  "
               f"dE_mean={agg['dE_mean']['median']:.2f}  "

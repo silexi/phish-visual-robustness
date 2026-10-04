@@ -1,0 +1,53 @@
+{
+ "A0n": {
+  "n_identical": 748,
+  "float32_not_one": 546,
+  "float32_max_abs_dev": 7.152557373046875e-07,
+  "float32_max_value": 1.0000007152557373,
+  "float64_not_one": 730,
+  "float64_max_abs_dev": 4.884981308350689e-15,
+  "float64_max_value": 1.0000000000000049
+ },
+ "A1": {
+  "n_identical": 0
+ },
+ "A3": {
+  "n_identical": 135,
+  "float32_not_one": 6,
+  "float32_max_abs_dev": 2.384185791015625e-07,
+  "float32_max_value": 1.000000238418579,
+  "float64_not_one": 135,
+  "float64_max_abs_dev": 1.5543122344752192e-15,
+  "float64_max_value": 0.9999999999999996
+ },
+ "A4": {
+  "n_identical": 0
+ },
+ "S1": {
+  "n_identical": 29,
+  "float32_not_one": 27,
+  "float32_max_abs_dev": 3.5762786865234375e-07,
+  "float32_max_value": 1.000000238418579,
+  "float64_not_one": 29,
+  "float64_max_abs_dev": 2.220446049250313e-15,
+  "float64_max_value": 1.0000000000000018
+ },
+ "S3": {
+  "n_identical": 6,
+  "float32_not_one": 6,
+  "float32_max_abs_dev": 4.76837158203125e-07,
+  "float32_max_value": 1.0000004768371582,
+  "float64_not_one": 6,
+  "float64_max_abs_dev": 1.5543122344752192e-15,
+  "float64_max_value": 0.999999999999999
+ },
+ "S7": {
+  "n_identical": 0
+ },
+ "total": {
+  "n_identical": 918,
+  "float32_not_one": 585,
+  "float32_max_value": 1.0000007152557373,
+  "float64_max_value": 1.0000000000000049
+ }
+}

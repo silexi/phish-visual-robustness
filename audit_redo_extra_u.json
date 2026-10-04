@@ -1,0 +1,187 @@
+{
+ "float32 two-pass (first pass)": {
+  "rows": 8442,
+  "gt1": 1536,
+  "max_excess": 2.7179718017578125e-05,
+  "min_excess": -1.0496505685150623,
+  "rows_off_by_more_than_eps": 4195
+ },
+ "float64 centred once": {
+  "rows": 8442,
+  "gt1": 762,
+  "max_excess": 4.6629367034256575e-14,
+  "min_excess": -1.0496505189640797,
+  "rows_off_by_more_than_eps": 4196
+ },
+ "ranking": {
+  "A0n": {
+   "dhash": [
+    "8x8",
+    "SSIM*",
+    "hash",
+    "LBP",
+    "HOG",
+    "colour",
+    "fusion",
+    "CLIP"
+   ],
+   "clip": [
+    "8x8",
+    "SSIM*",
+    "hash",
+    "LBP",
+    "HOG",
+    "colour",
+    "fusion",
+    "CLIP"
+   ],
+   "identical": true
+  },
+  "A1": {
+   "dhash": [
+    "colour",
+    "LBP",
+    "hash",
+    "8x8",
+    "SSIM*",
+    "fusion",
+    "CLIP",
+    "HOG"
+   ],
+   "clip": [
+    "colour",
+    "LBP",
+    "8x8",
+    "hash",
+    "SSIM*",
+    "fusion",
+    "CLIP",
+    "HOG"
+   ],
+   "identical": false
+  },
+  "A3": {
+   "dhash": [
+    "colour",
+    "8x8",
+    "SSIM*",
+    "hash",
+    "LBP",
+    "fusion",
+    "CLIP",
+    "HOG"
+   ],
+   "clip": [
+    "colour",
+    "8x8",
+    "SSIM*",
+    "hash",
+    "LBP",
+    "fusion",
+    "CLIP",
+    "HOG"
+   ],
+   "identical": true
+  },
+  "A4": {
+   "dhash": [
+    "LBP",
+    "colour",
+    "8x8",
+    "fusion",
+    "CLIP",
+    "SSIM*",
+    "hash",
+    "HOG"
+   ],
+   "clip": [
+    "LBP",
+    "colour",
+    "8x8",
+    "fusion",
+    "CLIP",
+    "SSIM*",
+    "hash",
+    "HOG"
+   ],
+   "identical": true
+  },
+  "S1": {
+   "dhash": [
+    "LBP",
+    "8x8",
+    "CLIP",
+    "colour",
+    "SSIM*",
+    "fusion",
+    "hash",
+    "HOG"
+   ],
+   "clip": [
+    "LBP",
+    "8x8",
+    "CLIP",
+    "colour",
+    "SSIM*",
+    "fusion",
+    "hash",
+    "HOG"
+   ],
+   "identical": true
+  },
+  "S3": {
+   "dhash": [
+    "LBP",
+    "CLIP",
+    "SSIM*",
+    "hash",
+    "8x8",
+    "HOG",
+    "fusion",
+    "colour"
+   ],
+   "clip": [
+    "LBP",
+    "CLIP",
+    "SSIM*",
+    "hash",
+    "HOG",
+    "8x8",
+    "fusion",
+    "colour"
+   ],
+   "identical": false
+  },
+  "S7": {
+   "dhash": [
+    "LBP",
+    "colour",
+    "CLIP",
+    "8x8",
+    "SSIM*",
+    "fusion",
+    "hash",
+    "HOG"
+   ],
+   "clip": [
+    "LBP",
+    "colour",
+    "SSIM*",
+    "8x8",
+    "CLIP",
+    "fusion",
+    "hash",
+    "HOG"
+   ],
+   "identical": false
+  }
+ },
+ "A3_max_page": [
+  0.022493,
+  "CLIP"
+ ],
+ "A3_max_cluster": [
+  0.034762,
+  "CLIP"
+ ]
+}

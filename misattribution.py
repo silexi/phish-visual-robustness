@@ -7,15 +7,17 @@ vlm/desc_<cond>.jsonl = perturbed runs) and reports, per condition,
   * unconditional misattribution (the table column): pages whose perturbed
     answer parses and names a brand different from the clean brand, or names
     any brand where the clean answer named none; denominator = pages with a
-    parsable clean answer that are present in the condition file (196; 195
-    for A1/S3, whose files hold 199 rows);
+    parsable clean answer that are present in the condition file (195 of the
+    200-page subset; all eight condition files hold 200 rows, so the
+    denominator is the same in every condition, unlike the first run, where
+    A1 and S3 held 199 rows and the denominator fell to 195 from 196);
   * the split of that count into named-brand pages (a different brand) and
     unnamed pages (an invented brand), as quoted in Section 6.3;
-  * the conditional count on the brand-eligible pages only (148; 147 for
-    A1/S3), i.e. the "wrong brand" figure of the earlier audit.
+  * the conditional count on the brand-eligible pages only (158), i.e. the
+    "wrong brand" figure of the earlier audit.
 
 Brand normalisation is the one used everywhere else in the package:
-lower-case, non-alphanumerics removed (audit12.py, vlm_retention.py).
+lower-case, non-alphanumerics removed (vlm_retention.py; run1_833/audit12.py).
 
 Usage (from the package root):
     python misattribution.py [--out results_misattribution.json]
@@ -68,8 +70,8 @@ def main():
         entry = {"n_rows": len(att), "denominator": len(ids), "n_named": len(named),
                  "n_unnamed": len(unnamed), "misattributed": m_named + m_unnamed,
                  "misattributed_on_named": m_named, "invented_on_unnamed": m_unnamed,
-                 "rate": round((m_named + m_unnamed) / len(ids), 4),
-                 "conditional_rate_on_named": round(m_named / len(named), 4)}
+                 "rate": round((m_named + m_unnamed) / len(ids), 6),
+                 "conditional_rate_on_named": round(m_named / len(named), 6)}
         res["conditions"][c] = entry
         print(f"{c:<4} {entry['misattributed']:>3}/{entry['denominator']} = {entry['rate']:.3f}  "
               f"(named {m_named}/{len(named)}, unnamed {m_unnamed}/{len(unnamed)})")

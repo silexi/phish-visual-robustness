@@ -1,0 +1,159 @@
+{
+ "A0n": [],
+ "A1": [
+  {
+   "a": "8x8",
+   "b": "SSIM*",
+   "dhash": [
+    1.0,
+    1.0
+   ],
+   "clip": [
+    0.982456,
+    1.0
+   ],
+   "paired_diff": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "supported": false
+  },
+  {
+   "a": "8x8",
+   "b": "hash",
+   "dhash": [
+    1.0,
+    0.994186
+   ],
+   "clip": [
+    0.982456,
+    0.994152
+   ],
+   "paired_diff": 0.005814,
+   "lo": 0.0,
+   "hi": 0.017442,
+   "supported": false
+  },
+  {
+   "a": "8x8",
+   "b": "fusion",
+   "dhash": [
+    1.0,
+    1.0
+   ],
+   "clip": [
+    0.982456,
+    1.0
+   ],
+   "paired_diff": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "supported": false
+  },
+  {
+   "a": "8x8",
+   "b": "CLIP",
+   "dhash": [
+    1.0,
+    1.0
+   ],
+   "clip": [
+    0.982456,
+    1.0
+   ],
+   "paired_diff": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "supported": false
+  },
+  {
+   "a": "8x8",
+   "b": "HOG",
+   "dhash": [
+    1.0,
+    1.0
+   ],
+   "clip": [
+    0.982456,
+    1.0
+   ],
+   "paired_diff": 0.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "supported": false
+  }
+ ],
+ "A3": [],
+ "A4": [
+  {
+   "a": "fusion",
+   "b": "CLIP",
+   "dhash": [
+    0.976744,
+    0.976297
+   ],
+   "clip": [
+    0.97076,
+    0.980057
+   ],
+   "paired_diff": 0.000447,
+   "lo": -0.02907,
+   "hi": 0.029964,
+   "supported": false
+  }
+ ],
+ "S1": [
+  {
+   "a": "colour",
+   "b": "SSIM*",
+   "dhash": [
+    0.8,
+    0.807143
+   ],
+   "clip": [
+    0.79213,
+    0.79213
+   ],
+   "paired_diff": -0.007143,
+   "lo": -0.05,
+   "hi": 0.035714,
+   "supported": false
+  }
+ ],
+ "S3": [
+  {
+   "a": "SSIM*",
+   "b": "HOG",
+   "dhash": [
+    0.898647,
+    0.902992
+   ],
+   "clip": [
+    0.877304,
+    0.873373
+   ],
+   "paired_diff": -0.004345,
+   "lo": -0.044748,
+   "hi": 0.036835,
+   "supported": false
+  }
+ ],
+ "S7": [
+  {
+   "a": "8x8",
+   "b": "SSIM*",
+   "dhash": [
+    0.963663,
+    0.965116
+   ],
+   "clip": [
+    0.968933,
+    0.959064
+   ],
+   "paired_diff": -0.001453,
+   "lo": -0.040698,
+   "hi": 0.037791,
+   "supported": false
+  }
+ ],
+ "n_resolved_but_swapped": 0
+}

@@ -79,13 +79,13 @@ def cluster_stats(hit, cl, B=4000, seed=20260922):
     draws = np.array([per[rng.integers(0, len(per), len(per))].mean() for _ in range(B)])
     n_all = int(sum(hit[idx[k]].all() for k in keys))
     lo, hi = wilson(n_all, len(keys))
-    return {"cluster_mean": round(float(per.mean()), 4),
-            "boot95": [round(float(np.percentile(draws, 2.5)), 4),
-                       round(float(np.percentile(draws, 97.5)), 4)],
-            "page_mean": round(float(hit.mean()), 4),
+    return {"cluster_mean": round(float(per.mean()), 6),
+            "boot95": [round(float(np.percentile(draws, 2.5)), 6),
+                       round(float(np.percentile(draws, 97.5)), 6)],
+            "page_mean": round(float(hit.mean()), 6),
             "n_clusters": int(len(keys)),
             "clusters_fully_retained": n_all,
-            "wilson95_full": [round(lo, 4), round(hi, 4)]}
+            "wilson95_full": [round(lo, 6), round(hi, 6)]}
 
 
 def main():

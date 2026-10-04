@@ -62,7 +62,7 @@ M = {
         "x_ret": "cluster-level rank-1 retention",
         "x_cost": "perceptibility  $f_{\\mathrm{JND}}$  (median, log scale)",
         "y_ret": "retention",
-        "leg_px": "fusion (pixel)",
+        "leg_px": "fusion (classical)",
         "leg_sem": "brand (semantic)",
         "s7a": "(a) clean render",
         "s7b": "(b) S7: a single footer line added to the page",
@@ -82,7 +82,7 @@ M = {
         "x_ret": "küme düzeyinde ilk sıra korunma oranı",
         "x_cost": "algısal fark edilebilirlik  $f_{\\mathrm{JND}}$  (medyan, log ölçek)",
         "y_ret": "korunma oranı",
-        "leg_px": "füzyon (piksel)",
+        "leg_px": "füzyon (klasik)",
         "leg_sem": "marka (anlamsal)",
         "s7a": "(a) temiz render",
         "s7b": "(b) S7: sayfaya tek satır altbilgi eklendi",
@@ -224,9 +224,13 @@ def sekil3():
     ax.legend(frameon=False, loc="lower left", handletextpad=0.4)
     fig.savefig(CIK / "fig3_perceptibility_retention.pdf")
     plt.close(fig)
-    print(f"  fig3: en az fark edilen etkili kosul S1 "
-          f"(f_JND={perc['S1']['f_JND']['median']}, "
-          f"marka={vlm['conditions']['S1']['brand']['rate']})")
+    # En az fark edilebilir etkili kosul VERIDEN secilir; elle yazilan bir ad
+    # girdi dosyalari degistiginde sessizce yanlis olur ve konsol ciktisi
+    # olculmus bir sonuc gibi okunur. Bos kosul (A0n) bu listede yoktur.
+    en_az = min(kos, key=lambda k: perc[k]["f_JND"]["median"])
+    print(f"  fig3: en az fark edilen etkili kosul {en_az} "
+          f"(f_JND={perc[en_az]['f_JND']['median']}, "
+          f"marka={vlm['conditions'][en_az]['brand']['rate']})")
 
 
 # =====================================================================
@@ -242,6 +246,17 @@ def sekil4():
     panel_h = panel_w * h / w
 
     fig = plt.figure(figsize=(TAM, panel_h + 0.40))
+    # Panel uzerindeki iki model yaniti ELLE yazilidir, veriden okunmaz; ve
+    # bu kacinilmazdir. Panelde gorulen sayfa bir kitin uc ozdes yeniden
+    # dagitimidir (ids_u.txt icinde ae9aaecd3d2c6de8, cdd59cb6345a4b41,
+    # d0bc96540a5f9973; 809., 953. ve 974. satirlar), uc kimlik de
+    # buyutulmus kosumun "ilk 200 kimlik" anlamsal ornekleminin disinda
+    # kaldigi icin vlm/desc_*.jsonl icinde karsiliklari yoktur. Yanitlarin
+    # kaynagi ILK kosumun kaydidir: run1_833/vlm/desc_A0.jsonl icinde uc
+    # kimligin de temiz yaniti "SharePoint", run1_833/vlm/desc_S7.jsonl
+    # icinde S7 yaniti "Aventro Corporation"dir. Asagidaki iki dize o ham
+    # yanitlarin kucuk harfe cevrilmis halidir; vlm_retention.norm_brand'in
+    # urettigi anahtar degil (o bosluklari da atar: "aventrocorporation").
     for i, (im, ust, marka) in enumerate([
             (a, M["s7a"], "sharepoint"),
             (b, M["s7b"], "aventro corporation")]):

@@ -11,7 +11,7 @@
   "b_b8130263cac68b"
  ],
  "n_phish_desc": 200,
- "n_phish_parse_fail": 4,
+ "n_phish_parse_fail": 5,
  "n_legit_desc": 120,
  "n_legit_parse_fail": 1,
  "n_legit_brand_labels": 120,
@@ -25,117 +25,118 @@
   "mfa_challenge": 1
  },
  "phish_page_type": {
-  "login": 107,
-  "other": 61,
-  "password_entry": 8,
-  "landing": 13,
-  "mfa_challenge": 6,
-  "error": 1
+  "other": 47,
+  "login": 122,
+  "password_entry": 16,
+  "mfa_challenge": 4,
+  "landing": 4,
+  "error": 1,
+  "account_recovery": 1
  },
  "phish_miss_page_type": {
-  "other": 55,
-  "landing": 1,
-  "login": 11
+  "other": 44,
+  "login": 7,
+  "landing": 3
  },
  "variants": [
   {
    "negative_set": "(a) legit labelled login/pw/mfa by model",
    "parse_fail_as_negative": false,
    "salvaged_parse": false,
-   "n_phish": 196,
+   "n_phish": 195,
    "n_legit": 46,
-   "TP": 129,
-   "FN": 67,
+   "TP": 141,
+   "FN": 54,
    "FP": 45,
    "TN": 1,
-   "precision": 0.7414,
-   "recall_TPR": 0.6582,
-   "FPR": 0.9783,
-   "F1": 0.6973,
-   "TPR_minus_FPR": -0.3201,
-   "F1_always_positive": 0.895,
+   "precision": 0.758065,
+   "recall_TPR": 0.723077,
+   "FPR": 0.978261,
+   "F1": 0.740157,
+   "TPR_minus_FPR": -0.255184,
+   "F1_always_positive": 0.894495,
    "TPR_wilson95": [
-    0.5893,
-    0.721
+    0.65642,
+    0.781114
    ],
    "FPR_wilson95": [
-    0.8866,
-    0.9962
+    0.886644,
+    0.996152
    ]
   },
   {
    "negative_set": "(b) all parsed legit pages",
    "parse_fail_as_negative": false,
    "salvaged_parse": false,
-   "n_phish": 196,
+   "n_phish": 195,
    "n_legit": 119,
-   "TP": 129,
-   "FN": 67,
+   "TP": 141,
+   "FN": 54,
    "FP": 45,
    "TN": 74,
-   "precision": 0.7414,
-   "recall_TPR": 0.6582,
-   "FPR": 0.3782,
-   "F1": 0.6973,
-   "TPR_minus_FPR": 0.28,
-   "F1_always_positive": 0.7671,
+   "precision": 0.758065,
+   "recall_TPR": 0.723077,
+   "FPR": 0.378151,
+   "F1": 0.740157,
+   "TPR_minus_FPR": 0.344926,
+   "F1_always_positive": 0.766208,
    "TPR_wilson95": [
-    0.5893,
-    0.721
+    0.65642,
+    0.781114
    ],
    "FPR_wilson95": [
-    0.2961,
-    0.4678
+    0.296122,
+    0.467801
    ]
   },
   {
    "negative_set": "(c) legit with visible password field",
    "parse_fail_as_negative": false,
    "salvaged_parse": false,
-   "n_phish": 196,
+   "n_phish": 195,
    "n_legit": 31,
-   "TP": 129,
-   "FN": 67,
+   "TP": 141,
+   "FN": 54,
    "FP": 28,
    "TN": 3,
-   "precision": 0.8217,
-   "recall_TPR": 0.6582,
-   "FPR": 0.9032,
-   "F1": 0.7309,
-   "TPR_minus_FPR": -0.2451,
-   "F1_always_positive": 0.9267,
+   "precision": 0.83432,
+   "recall_TPR": 0.723077,
+   "FPR": 0.903226,
+   "F1": 0.774725,
+   "TPR_minus_FPR": -0.180149,
+   "F1_always_positive": 0.926366,
    "TPR_wilson95": [
-    0.5893,
-    0.721
+    0.65642,
+    0.781114
    ],
    "FPR_wilson95": [
-    0.751,
-    0.9665
+    0.750997,
+    0.966536
    ]
   },
   {
    "negative_set": "(c') visible password field, capture flag",
    "parse_fail_as_negative": false,
    "salvaged_parse": false,
-   "n_phish": 196,
+   "n_phish": 195,
    "n_legit": 28,
-   "TP": 129,
-   "FN": 67,
+   "TP": 141,
+   "FN": 54,
    "FP": 25,
    "TN": 3,
-   "precision": 0.8377,
-   "recall_TPR": 0.6582,
-   "FPR": 0.8929,
-   "F1": 0.7371,
-   "TPR_minus_FPR": -0.2347,
-   "F1_always_positive": 0.9333,
+   "precision": 0.849398,
+   "recall_TPR": 0.723077,
+   "FPR": 0.892857,
+   "F1": 0.781163,
+   "TPR_minus_FPR": -0.16978,
+   "F1_always_positive": 0.933014,
    "TPR_wilson95": [
-    0.5893,
-    0.721
+    0.65642,
+    0.781114
    ],
    "FPR_wilson95": [
-    0.728,
-    0.9629
+    0.728038,
+    0.962882
    ]
   },
   {
@@ -144,23 +145,23 @@
    "salvaged_parse": false,
    "n_phish": 200,
    "n_legit": 46,
-   "TP": 129,
-   "FN": 71,
+   "TP": 141,
+   "FN": 59,
    "FP": 45,
    "TN": 1,
-   "precision": 0.7414,
-   "recall_TPR": 0.645,
-   "FPR": 0.9783,
-   "F1": 0.6898,
-   "TPR_minus_FPR": -0.3333,
-   "F1_always_positive": 0.8969,
+   "precision": 0.758065,
+   "recall_TPR": 0.705,
+   "FPR": 0.978261,
+   "F1": 0.73057,
+   "TPR_minus_FPR": -0.273261,
+   "F1_always_positive": 0.896861,
    "TPR_wilson95": [
-    0.5765,
-    0.708
+    0.638412,
+    0.763862
    ],
    "FPR_wilson95": [
-    0.8866,
-    0.9962
+    0.886644,
+    0.996152
    ]
   },
   {
@@ -169,23 +170,23 @@
    "salvaged_parse": false,
    "n_phish": 200,
    "n_legit": 120,
-   "TP": 129,
-   "FN": 71,
+   "TP": 141,
+   "FN": 59,
    "FP": 45,
    "TN": 75,
-   "precision": 0.7414,
-   "recall_TPR": 0.645,
+   "precision": 0.758065,
+   "recall_TPR": 0.705,
    "FPR": 0.375,
-   "F1": 0.6898,
-   "TPR_minus_FPR": 0.27,
-   "F1_always_positive": 0.7692,
+   "F1": 0.73057,
+   "TPR_minus_FPR": 0.33,
+   "F1_always_positive": 0.769231,
    "TPR_wilson95": [
-    0.5765,
-    0.708
+    0.638412,
+    0.763862
    ],
    "FPR_wilson95": [
-    0.2935,
-    0.4642
+    0.293523,
+    0.464232
    ]
   },
   {
@@ -194,23 +195,23 @@
    "salvaged_parse": false,
    "n_phish": 200,
    "n_legit": 32,
-   "TP": 129,
-   "FN": 71,
+   "TP": 141,
+   "FN": 59,
    "FP": 28,
    "TN": 4,
-   "precision": 0.8217,
-   "recall_TPR": 0.645,
+   "precision": 0.83432,
+   "recall_TPR": 0.705,
    "FPR": 0.875,
-   "F1": 0.7227,
-   "TPR_minus_FPR": -0.23,
-   "F1_always_positive": 0.9259,
+   "F1": 0.764228,
+   "TPR_minus_FPR": -0.17,
+   "F1_always_positive": 0.925926,
    "TPR_wilson95": [
-    0.5765,
-    0.708
+    0.638412,
+    0.763862
    ],
    "FPR_wilson95": [
-    0.7193,
-    0.9503
+    0.719314,
+    0.950299
    ]
   },
   {
@@ -219,23 +220,23 @@
    "salvaged_parse": true,
    "n_phish": 200,
    "n_legit": 46,
-   "TP": 133,
-   "FN": 67,
+   "TP": 145,
+   "FN": 55,
    "FP": 45,
    "TN": 1,
-   "precision": 0.7472,
-   "recall_TPR": 0.665,
-   "FPR": 0.9783,
-   "F1": 0.7037,
-   "TPR_minus_FPR": -0.3133,
-   "F1_always_positive": 0.8969,
+   "precision": 0.763158,
+   "recall_TPR": 0.725,
+   "FPR": 0.978261,
+   "F1": 0.74359,
+   "TPR_minus_FPR": -0.253261,
+   "F1_always_positive": 0.896861,
    "TPR_wilson95": [
-    0.597,
-    0.7268
+    0.659315,
+    0.782204
    ],
    "FPR_wilson95": [
-    0.8866,
-    0.9962
+    0.886644,
+    0.996152
    ]
   },
   {
@@ -244,23 +245,23 @@
    "salvaged_parse": true,
    "n_phish": 200,
    "n_legit": 120,
-   "TP": 133,
-   "FN": 67,
+   "TP": 145,
+   "FN": 55,
    "FP": 46,
    "TN": 74,
-   "precision": 0.743,
-   "recall_TPR": 0.665,
-   "FPR": 0.3833,
-   "F1": 0.7018,
-   "TPR_minus_FPR": 0.2817,
-   "F1_always_positive": 0.7692,
+   "precision": 0.759162,
+   "recall_TPR": 0.725,
+   "FPR": 0.383333,
+   "F1": 0.741688,
+   "TPR_minus_FPR": 0.341667,
+   "F1_always_positive": 0.769231,
    "TPR_wilson95": [
-    0.597,
-    0.7268
+    0.659315,
+    0.782204
    ],
    "FPR_wilson95": [
-    0.3012,
-    0.4727
+    0.301244,
+    0.472661
    ]
   },
   {
@@ -269,100 +270,100 @@
    "salvaged_parse": true,
    "n_phish": 200,
    "n_legit": 32,
-   "TP": 133,
-   "FN": 67,
+   "TP": 145,
+   "FN": 55,
    "FP": 29,
    "TN": 3,
-   "precision": 0.821,
-   "recall_TPR": 0.665,
-   "FPR": 0.9062,
-   "F1": 0.7348,
-   "TPR_minus_FPR": -0.2412,
-   "F1_always_positive": 0.9259,
+   "precision": 0.833333,
+   "recall_TPR": 0.725,
+   "FPR": 0.90625,
+   "F1": 0.775401,
+   "TPR_minus_FPR": -0.18125,
+   "F1_always_positive": 0.925926,
    "TPR_wilson95": [
-    0.597,
-    0.7268
+    0.659315,
+    0.782204
    ],
    "FPR_wilson95": [
-    0.7578,
-    0.9676
+    0.757815,
+    0.967599
    ]
   }
  ],
  "cluster_weighted_recall": {
-  "n_clusters": 65,
-  "cluster_mean_recall": 0.7385,
+  "n_clusters": 93,
+  "cluster_mean_recall": 0.83871,
   "boot95": [
-   0.6308,
-   0.8462
+   0.763172,
+   0.903226
   ],
-  "clusters_majority_detected": 48,
-  "clusters_majority_rate": 0.7385,
+  "clusters_majority_detected": 78,
+  "clusters_majority_rate": 0.83871,
   "clusters_majority_wilson95": [
-   0.6205,
-   0.8298
+   0.750797,
+   0.89975
   ],
-  "clusters_none_detected": 17,
-  "clusters_all_detected": 48,
+  "clusters_none_detected": 15,
+  "clusters_all_detected": 78,
   "misses_by_cluster_top": [
    [
-    "k22",
-    33
+    "k0",
+    29
    ],
    [
-    "k18",
-    6
+    "k14",
+    7
    ],
    [
-    "k9",
-    6
+    "k28",
+    3
    ]
   ]
  },
  "rates": {
   "phish_clean": {
-   "k": 129,
-   "n": 196,
-   "rate": 0.6582,
+   "k": 141,
+   "n": 195,
+   "rate": 0.723077,
    "wilson95": [
-    0.5893,
-    0.721
+    0.65642,
+    0.781114
    ]
   },
   "legit_all": {
    "k": 45,
    "n": 119,
-   "rate": 0.3782,
+   "rate": 0.378151,
    "wilson95": [
-    0.2961,
-    0.4678
+    0.296122,
+    0.467801
    ]
   },
   "legit_login_by_model": {
    "k": 45,
    "n": 46,
-   "rate": 0.9783,
+   "rate": 0.978261,
    "wilson95": [
-    0.8866,
-    0.9962
+    0.886644,
+    0.996152
    ]
   },
   "legit_pw_visible": {
    "k": 28,
    "n": 31,
-   "rate": 0.9032,
+   "rate": 0.903226,
    "wilson95": [
-    0.751,
-    0.9665
+    0.750997,
+    0.966536
    ]
   },
   "legit_pw_visible_capture_flag": {
    "k": 25,
    "n": 28,
-   "rate": 0.8929,
+   "rate": 0.892857,
    "wilson95": [
-    0.728,
-    0.9629
+    0.728038,
+    0.962882
    ]
   }
  }

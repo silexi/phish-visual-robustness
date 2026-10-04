@@ -1,0 +1,24 @@
+{
+ "n_A0n_pages": 1206,
+ "n_pixel_identical": 1146,
+ "float32 two-pass (first pass)": {
+  "exactly_one": 11,
+  "n": 1146,
+  "max_self": 1.0000271797180176,
+  "min_self": 0.9910146594047546,
+  "max_abs_dev": 0.008985340595245361,
+  "rows_beaten": 145,
+  "max_gap": 1.9252300262451172e-05,
+  "rows_gap_gt_eps": 0
+ },
+ "float64 centred once": {
+  "exactly_one": 5,
+  "n": 1146,
+  "max_self": 1.0000000000000457,
+  "min_self": 0.9910174261239254,
+  "max_abs_dev": 0.008982573876074595,
+  "rows_beaten": 4,
+  "max_gap": 2.4213964167074664e-12,
+  "rows_gap_gt_eps": 0
+ }
+}

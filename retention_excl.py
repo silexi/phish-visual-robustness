@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 """Rank-1 retention when the query's own clean render is not in the gallery.
 
-The primary analysis (retention2.py) scores a perturbed render against all 833
-clean renders, its own clean counterpart included.  A reviewer can object that
+The primary analysis (retention2.py) scores a perturbed render against all
+1,206 clean renders of the measurement set, its own clean counterpart included
+(833 in the first run, released under run1_833/).  A reviewer can object that
 a hit is then partly "find the image you were made from".  Five galleries are
 scored here with exactly the primary hit rule (own cluster attains the row
 maximum within eps):
@@ -52,9 +53,9 @@ def paired_diff(d, cl, B=4000, seed=20260922):
     per = np.array([d[cl == k].mean() for k in keys])
     rng = np.random.default_rng(seed)
     draws = np.array([per[rng.integers(0, len(per), len(per))].mean() for _ in range(B)])
-    return {"cluster_mean_diff": round(float(per.mean()), 4),
-            "boot95": [round(float(np.percentile(draws, 2.5)), 4),
-                       round(float(np.percentile(draws, 97.5)), 4)],
+    return {"cluster_mean_diff": round(float(per.mean()), 6),
+            "boot95": [round(float(np.percentile(draws, 2.5)), 6),
+                       round(float(np.percentile(draws, 97.5)), 6)],
             "n_clusters": int(len(keys)),
             "clusters_negative": int((per < 0).sum()),
             "clusters_positive": int((per > 0).sum())}

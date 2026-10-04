@@ -7,24 +7,35 @@ password-field and text conditions remove kits whose form never rendered; the
 colour condition removes the near-blank canvases of kits whose stylesheet is
 dead.
 
-Timing disclosure.  The gate was applied once, by hand, on 2026-09-22 at
-03:25 local time, when the render workers of 13 of the 20 shards had
-finished (shards 0-7 and 9-13).  Shards 8 and 14-19 completed a few minutes
-later and were never gated, so the 1,702 ids in `ids_gated_all.txt` come
-from those 13 shards (7,778 manifest rows, 6,966 successful renders).  The
-same predicate over all 20 shards would have admitted 2,359 pages; the 657
-pages that were left out were left out by timing, not by any property of the
-pages.  Every later stage (fidelity gate, clustering, perturbation, VLM) ran
-on the 13-shard set.  This script therefore defaults to the 13 shards so
-that it reproduces `ids_gated_all.txt` exactly; pass `--shards all` to see
-the 20-shard counts.  The per-shard manifests are not part of the public
-release (they contain the phishing source domains), so the script is kept
-for the record and for anyone who re-renders the corpus.
+Shard coverage.  The gate now runs over all 20 downloaded shards (0-19):
+12,119 manifest rows, 10,520 successful renders, 2,359 ids, written to
+`ids_gated_all.txt`.  That is the list every later stage of the reported
+measurement used.
+
+The first release of this package (v1.0.0) gated only 13 of the 20 shards.
+The gate had been applied once, by hand, on 2026-09-22 at 03:25 local time,
+when the render workers of shards 0-7 and 9-13 had finished; shards 8 and
+14-19 completed a few minutes later and were never gated, so that run's id
+list held 1,702 ids from 13 shards (7,778 manifest rows, 6,966 successful
+renders).  The 657 pages it missed were missed by timing, not by any
+property of the pages: the 2,359 ids of the 20-shard run are a strict
+superset of those 1,702, and 372 of the 657 go on to survive the
+render-fidelity gate.  Pass `--shards 0 1 2 3 4 5 6 7 9 10 11 12 13` (the
+`FIRST_RUN_SHARDS` list below) to reproduce that run's funnel and id set:
+7,778 manifest rows, 6,966 successful renders, 1,702 ids, equal as a set to
+`run1_833/ids_gated_all.txt`.  Compare with `--check <list>`, not with `cmp`:
+this script writes its ids sorted, while that file is in the order the hand run
+of 2026-09-22 produced them.
+
+The per-shard manifests are not part of the public release (they contain the
+phishing source domains), so the script is kept for the record and for anyone
+who re-renders the corpus.
 """
 import argparse, collections, json, re
 from pathlib import Path
 
-USED_SHARDS = [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13]
+# the 13 shards the v1.0.0 measurement gated; kept so that list stays reproducible
+FIRST_RUN_SHARDS = [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13]
 PREDICATE = "ok and pw_visible and text_len > 60 and n_colors >= 10"
 
 
@@ -36,9 +47,10 @@ def keep(r):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus", default="corpus", help="dir with manifest_s*.jsonl")
-    ap.add_argument("--shards", nargs="+", default=[str(s) for s in USED_SHARDS],
-                    help="shard numbers to gate (default: the 13 shards that were gated "
-                         "in the reported run); 'all' for every manifest present")
+    ap.add_argument("--shards", nargs="+", default=["all"],
+                    help="shard numbers to gate (default: 'all', every manifest present, "
+                         "which is what the reported measurement used); pass the 13 numbers "
+                         "of FIRST_RUN_SHARDS to reproduce the v1.0.0 list")
     ap.add_argument("--out", default="ids_gated_all.txt")
     ap.add_argument("--check", default=None,
                     help="an existing id list to compare with (e.g. the released ids_gated_all.txt)")

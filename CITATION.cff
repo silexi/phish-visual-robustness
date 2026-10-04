@@ -6,18 +6,28 @@ type: software
 title: >-
   Robustness of Visual Representations for Phishing Webpages: code and
   derived data
-version: 1.0.0
-date-released: "2026-10-01"
+version: 2.0.0
+date-released: "2026-10-04"
 license: MIT
 repository-code: https://github.com/silexi/phish-visual-robustness
-doi: 10.5281/zenodo.23080956
+doi: 10.5281/zenodo.23080955
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.23080956
-    description: Zenodo archive of the v1.0.0 release (this version)
   - type: doi
     value: 10.5281/zenodo.23080955
     description: Zenodo concept DOI (resolves to the latest version)
+  # After the v2.0.0 archive is deposited, Zenodo mints a version DOI for it.
+  # Add it here as a third entry in this list, in this exact shape (a
+  # placeholder string cannot be left in its place: the CFF 1.2.0 schema
+  # validates DOI values
+  # against ^10\.\d{4,9}(\.\d+)?/... and GitHub rejects the whole file):
+  #   - type: doi
+  #     value: 10.5281/zenodo.NNNNNNNN
+  #     description: Zenodo archive of the v2.0.0 release (this version)
+  - type: doi
+    value: 10.5281/zenodo.23080956
+    description: >-
+      Zenodo archive of the v1.0.0 release (the earlier 833-page measurement,
+      kept in run1_833/)
 authors:
   - family-names: Kılıç
     given-names: Bartu

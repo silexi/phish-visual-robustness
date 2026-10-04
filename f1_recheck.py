@@ -49,7 +49,7 @@ def wilson(k, n, z=1.96):
     d = 1 + z * z / n
     c = (p + z * z / (2 * n)) / d
     h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (round(c - h, 4), round(c + h, 4))
+    return (round(c - h, 6), round(c + h, 6))
 
 
 def load(p):
@@ -106,10 +106,10 @@ def cm(ph, neg, name, parse_fail_as_negative=False, salvage=False):
            "salvaged_parse": salvage,
            "n_phish": len(ph_use), "n_legit": len(neg_use),
            "TP": tp, "FN": fn, "FP": fp, "TN": tn,
-           "precision": round(prec, 4), "recall_TPR": round(rec, 4),
-           "FPR": round(fpr, 4), "F1": round(f1, 4),
-           "TPR_minus_FPR": round(rec - fpr, 4),
-           "F1_always_positive": round(f1_all, 4),
+           "precision": round(prec, 6), "recall_TPR": round(rec, 6),
+           "FPR": round(fpr, 6), "F1": round(f1, 6),
+           "TPR_minus_FPR": round(rec - fpr, 6),
+           "F1_always_positive": round(f1_all, 6),
            "TPR_wilson95": wilson(tp, tp + fn), "FPR_wilson95": wilson(fp, fp + tn)}
     print(f"{name:<40} pf_neg={int(parse_fail_as_negative)} salv={int(salvage)}  "
           f"TP={tp:3d} FN={fn:3d} FP={fp:3d} TN={tn:3d}  "
@@ -127,11 +127,11 @@ def cluster_recall(ph, cmap, B=4000, seed=20260922):
     rng = np.random.default_rng(seed)
     draws = np.array([per[rng.integers(0, len(per), len(per))].mean() for _ in range(B)])
     maj = int((per > 0.5).sum())
-    return {"n_clusters": len(keys), "cluster_mean_recall": round(float(per.mean()), 4),
-            "boot95": [round(float(np.percentile(draws, 2.5)), 4),
-                       round(float(np.percentile(draws, 97.5)), 4)],
+    return {"n_clusters": len(keys), "cluster_mean_recall": round(float(per.mean()), 6),
+            "boot95": [round(float(np.percentile(draws, 2.5)), 6),
+                       round(float(np.percentile(draws, 97.5)), 6)],
             "clusters_majority_detected": maj,
-            "clusters_majority_rate": round(maj / len(keys), 4),
+            "clusters_majority_rate": round(maj / len(keys), 6),
             "clusters_majority_wilson95": wilson(maj, len(keys)),
             "clusters_none_detected": int((per == 0).sum()),
             "clusters_all_detected": int((per == 1).sum()),
@@ -220,7 +220,7 @@ print(f"cluster-weighted recall: {cr['cluster_mean_recall']} {cr['boot95']} over
 def rate(rows):
     rows = [r for r in rows if r.get("parsed")]
     k = sum(pos(r) for r in rows)
-    return {"k": k, "n": len(rows), "rate": round(k / len(rows), 4) if rows else None,
+    return {"k": k, "n": len(rows), "rate": round(k / len(rows), 6) if rows else None,
             "wilson95": wilson(k, len(rows))}
 res["rates"] = {"phish_clean": rate(ph), "legit_all": rate(neg_b),
                 "legit_login_by_model": rate(neg_a), "legit_pw_visible": rate(neg_c),

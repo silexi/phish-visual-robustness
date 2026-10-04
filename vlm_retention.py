@@ -69,7 +69,7 @@ def main():
           f"({100*named/max(1,len(clean)):.0f}%)", file=sys.stderr)
 
     results = {"n_clean_desc": len(clean),
-               "clean_brand_coverage": round(named / max(1, len(clean)), 4),
+               "clean_brand_coverage": round(named / max(1, len(clean)), 6),
                "conditions": {}}
 
     for spec in a.conds:
@@ -100,7 +100,7 @@ def main():
         eligible = [k for k, i in enumerate(ids) if clean[i]["brand"] is not None]
         entry = {"n": len(ids), "n_clusters": int(len(set(cl))),
                  "n_brand_eligible": len(eligible),
-                 "parse_fail_rate": round(float(np.mean(parse_fail)), 4)}
+                 "parse_fail_rate": round(float(np.mean(parse_fail)), 6)}
 
         for key, vec, sub in (("brand", brand_same, eligible),
                               ("abstain", abst, eligible),
@@ -112,10 +112,10 @@ def main():
                 continue
             lo, hi = wilson(int(v.sum()), len(v))
             _, blo, bhi = cluster_bootstrap(lambda t: v[t].mean(), c2, B=2000)
-            entry[key] = {"rate": round(float(v.mean()), 4),
+            entry[key] = {"rate": round(float(v.mean()), 6),
                           "n": int(len(v)),
-                          "wilson95": [round(lo, 4), round(hi, 4)],
-                          "boot95": [round(blo, 4), round(bhi, 4)]}
+                          "wilson95": [round(lo, 6), round(hi, 6)],
+                          "boot95": [round(blo, 6), round(bhi, 6)]}
         results["conditions"][name] = entry
         print(f"{name:<5} n={entry['n']:<4} marka={entry.get('brand',{}).get('rate',0):.3f} "
               f"cekimser={entry.get('abstain',{}).get('rate',0):.3f} "
