@@ -235,10 +235,12 @@ See `CITATION.cff`. Until the article is published, cite the repository
 release. Three DOIs are involved and they are not interchangeable:
 
 * https://doi.org/10.5281/zenodo.23080955 is the **concept** DOI. It always
-  resolves to the newest archived version and is the one the paper cites.
-* the **version** DOI of the v2.0.0 archive, which carries the 1,206-page
-  measurement the paper reports, is minted by Zenodo when that release is
-  deposited and is listed on the Zenodo record and in `CITATION.cff`.
+  resolves to the newest archived version and is the one the bibliography
+  entry in the paper carries.
+* https://doi.org/10.5281/zenodo.23145836 is the **version** DOI of the
+  v2.0.0 archive, which carries the 1,206-page measurement the paper reports.
+  Cite this one when you need the exact bytes the numbers came from; the
+  concept DOI above will move on to later versions.
 * https://doi.org/10.5281/zenodo.23080956 is the version DOI of the v1.0.0
   archive and stays bound to the 833-page measurement for good. It keeps
   resolving; it is not superseded, only smaller.
